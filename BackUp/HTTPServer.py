@@ -40,22 +40,10 @@ class MyHandler(BaseHTTPServer.BaseHTTPRequestHandler):
                 
             if self.path.endswith(".gif"):
                 # IMPLEMENT THIS
-		f = open(curdir + sep + self.path, 'rb') #self.path has /popcorn.gif
-                self.send_response(200)
-                self.send_header("Content-type", "image/gif")
-                self.end_headers()
-		self.wfile.write(f.read())
-                f.close()
                 return
                 
             if self.path.endswith(".jpg"):
                 # IMPLEMENT THIS
-                f = open(curdir + sep + self.path, 'rb') #self.path has /Curtain.jpg
-                self.send_response(200)
-                self.send_header("Content-type", "image/jpg")
-                self.end_headers()
-		self.wfile.write(f.read())
-                f.close()
                 return
         except IOError:
             self.send_error(404,'File not found: %self' % self.path)
